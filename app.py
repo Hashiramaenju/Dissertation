@@ -87,7 +87,7 @@ dashboard_html = """<!DOCTYPE html>
         .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
         @media (max-width: 768px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } }
         .stat-card { padding: 24px; border-radius: 20px; position: relative; overflow: hidden; }
-        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+        .stat-card::before { content: \'\'; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
         .stat-card:nth-child(1)::before { background: linear-gradient(90deg, transparent, var(--primary), transparent); }
         .stat-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
         .stat-card:nth-child(3)::before { background: linear-gradient(90deg, transparent, var(--secondary), transparent); }
@@ -131,7 +131,7 @@ dashboard_html = """<!DOCTYPE html>
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4); }
         .btn-secondary { background: rgba(148, 163, 184, 0.1); color: var(--text-primary); border: 1px solid var(--border); }
         .result-card { position: relative; overflow: hidden; }
-        .result-card::before { content: ''; position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%); }
+        .result-card::before { content: \'\'; position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%); }
         .result-content { text-align: center; padding: 20px 0; }
         .result-icon { width: 100px; height: 100px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--accent), #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4); }
         .result-icon svg { width: 50px; height: 50px; color: white; }
@@ -194,7 +194,7 @@ dashboard_html = """<!DOCTYPE html>
         </div>
         <h1>MedPredict Pro</h1>
         <p class="subtitle">Advanced Disease Prediction System powered by Machine Learning</p>
-        <div class="status-badge"><span class="status-dot"></span>System Online & Ready</div>
+        <div class="status-badge"><span class="status-dot"></span>System Online &amp; Ready</div>
     </header>
 
     <div class="container">
@@ -344,7 +344,7 @@ dashboard_html = """<!DOCTYPE html>
         const uniqueSymptoms = [...new Set(symptoms)].sort();
 
         const diseasePredictions = {
-            "Fungal infection": { symptoms: ["itching","skin_rash","nodal_skin_eruptions","skin_peeling","red_spots_over_body"], description: "A skin infection caused by various fungi including dermatophytes and yeast. It affects the skin, nails, and scalp. Common types include athlete's foot, ringworm, and jock itch. Fungal infections thrive in warm, moist areas and are highly contagious through direct contact or contaminated surfaces." },
+            "Fungal infection": { symptoms: ["itching","skin_rash","nodal_skin_eruptions","skin_peeling","red_spots_over_body"], description: "A skin infection caused by various fungi including dermatophytes and yeast. It affects the skin, nails, and scalp. Common types include athlete\'s foot, ringworm, and jock itch. Fungal infections thrive in warm, moist areas and are highly contagious through direct contact or contaminated surfaces." },
             "Allergy": { symptoms: ["continuous_sneezing","shivering","runny_nose","congestion"], description: "An exaggerated immune response to substances that are typically harmless to most people. Common allergens include pollen, dust mites, pet dander, and certain foods. Symptoms can range from mild (sneezing, itching) to severe (anaphylaxis). Management includes antihistamines and avoiding known triggers." },
             "GERD": { symptoms: ["indigestion","stomach_pain","acidity","nausea","belly_pain"], description: "Gastroesophageal reflux disease is a chronic digestive condition where stomach acid flows back into the esophagus, causing heartburn and irritation. Risk factors include obesity, pregnancy, and certain foods. Treatment involves lifestyle changes, medications, and in severe cases, surgery." },
             "Chronic cholestasis": { symptoms: ["yellowish_skin","dark_urine","yellow_crust_ooze","itching"], description: "A condition where bile flow from the liver is reduced or blocked, leading to bile buildup in the liver. Causes include gallstones, liver disease, and certain medications. Symptoms include jaundice, itching, and fatigue. Treatment depends on the underlying cause." },
@@ -354,7 +354,7 @@ dashboard_html = """<!DOCTYPE html>
             "Diabetes": { symptoms: ["weight_loss","urination","increased_appetite","irregular_sugar_level"], description: "A chronic metabolic disorder characterized by high blood glucose levels due to inadequate insulin production or function. Type 1 involves immune destruction of insulin-producing cells; Type 2 involves insulin resistance. Complications include heart disease, kidney damage, and nerve problems. Management includes medication, diet, and exercise." },
             "Gastroenteritis": { symptoms: ["nausea","vomiting","stomach_pain","headache","high_fever"], description: "Inflammation of the stomach and intestines caused by viral, bacterial, or parasitic infections. Commonly transmitted through contaminated food or water. Symptoms include diarrhea, vomiting, abdominal cramps, and fever. Most cases resolve on their own with rest and hydration." },
             "Bronchial Asthma": { symptoms: ["breathlessness","cough","congestion","sweating"], description: "A chronic respiratory condition where airways become inflamed and narrowed, causing wheezing, breathlessness, and coughing. Triggers include allergens, exercise, and cold air. Management includes inhaled corticosteroids, bronchodilators, and avoiding known triggers." },
-            "Hypertension": { symptoms: ["headache","dizziness","breathlessness"], description: "A condition where blood pressure in the arteries is consistently elevated, forcing the heart to work harder. Often called the 'silent killer' as it may show no symptoms. Risk factors include genetics, obesity, and high sodium intake. Treatment includes lifestyle changes and antihypertensive medications." },
+            "Hypertension": { symptoms: ["headache","dizziness","breathlessness"], description: "A condition where blood pressure in the arteries is consistently elevated, forcing the heart to work harder. Often called the \'silent killer\' as it may show no symptoms. Risk factors include genetics, obesity, and high sodium intake. Treatment includes lifestyle changes and antihypertensive medications." },
             "Migraine": { symptoms: ["headache","nausea","visual_disturbances","dizziness"], description: "A neurological condition characterized by severe recurring headaches, often accompanied by nausea, vomiting, and sensitivity to light and sound. Migraines can last hours to days and may be preceded by aura (visual disturbances). Triggers include stress, certain foods, and hormonal changes." },
             "Cervical spondylosis": { symptoms: ["neck_pain","back_pain","stiff_neck","weakness_in_limbs"], description: "Age-related wear and tear affecting the spinal disks in the neck. Also known as cervical osteoarthritis, it causes chronic neck pain and stiffness. May lead to spinal cord compression causing weakness or numbness in arms and legs. Treatment includes physical therapy, medications, and surgery in severe cases." },
             "Jaundice": { symptoms: ["yellowish_skin","dark_urine","nausea","loss_of_appetite"], description: "A condition causing yellowing of the skin and eyes due to elevated bilirubin levels. It indicates underlying liver dysfunction or bile duct obstruction. Causes include hepatitis, gallstones, and liver cirrhosis. Treatment depends on the underlying cause." },
@@ -368,38 +368,38 @@ dashboard_html = """<!DOCTYPE html>
             "Common Cold": { symptoms: ["congestion","runny_nose","continuous_sneezing","cough"], description: "A viral infectious disease of the upper respiratory tract affecting the nose and throat. Over 200 viruses can cause the common cold, with rhinoviruses being most common. Symptoms include sneezing, congestion, sore throat, and mild cough. Usually self-limiting within 7-10 days." },
             "Pneumonia": { symptoms: ["high_fever","cough","breathlessness","fatigue"], description: "An infection that inflames the air sacs in one or both lungs, which may fill with fluid. Caused by bacteria, viruses, or fungi, with bacterial pneumonia being most common. Symptoms include chest pain, fever, chills, and difficulty breathing. Treatment depends on the cause and may include antibiotics." },
             "Heart attack": { symptoms: ["breathlessness","sweating","nausea","vomiting"], description: "A medical emergency where blood flow to the heart is blocked, usually by a blood clot. Warning signs include chest discomfort, arm pain, shortness of breath, and cold sweat. Immediate medical attention is crucial. Prevention includes healthy lifestyle, managing cholesterol, and blood pressure." },
-            "Hypothyroidism": { symptoms: ["weight_gain","fatigue","cold_hands_and_feets","lethargy"], description: "A condition where the thyroid gland doesn't produce enough thyroid hormones, slowing down metabolism. Common causes include autoimmune disease and iodine deficiency. Symptoms include fatigue, weight gain, cold intolerance, and depression. Treated with synthetic thyroid hormone replacement." },
-            "Hyperthyroidism": { symptoms: ["weight_loss","increased_appetite","sweating","irritability"], description: "A condition where the thyroid gland produces excessive thyroid hormones, accelerating metabolism. Common cause is Graves' disease. Symptoms include rapid heartbeat, weight loss despite increased appetite, heat sensitivity, and tremor. Treatment includes antithyroid drugs, radioactive iodine, or surgery." },
+            "Hypothyroidism": { symptoms: ["weight_gain","fatigue","cold_hands_and_feets","lethargy"], description: "A condition where the thyroid gland does not produce enough thyroid hormones, slowing down metabolism. Common causes include autoimmune disease and iodine deficiency. Symptoms include fatigue, weight gain, cold intolerance, and depression. Treated with synthetic thyroid hormone replacement." },
+            "Hyperthyroidism": { symptoms: ["weight_loss","increased_appetite","sweating","irritability"], description: "A condition where the thyroid gland produces excessive thyroid hormones, accelerating metabolism. Common cause is Graves\' disease. Symptoms include rapid heartbeat, weight loss despite increased appetite, heat sensitivity, and tremor. Treatment includes antithyroid drugs, radioactive iodine, or surgery." },
             "Urinary tract infection": { symptoms: ["burning_micturition","urination","foul_smell_of_urine"], description: "An infection in any part of the urinary system, most commonly affecting the bladder and urethra. Caused primarily by E. coli bacteria. Symptoms include burning during urination, frequent urge to urinate, and cloudy urine. Treated with antibiotics, and prevention includes hydration and proper hygiene." }
         };
 
         function initializeSymptoms() {
-            const grid = document.getElementById('symptomsGrid');
-            grid.innerHTML = '';
+            const grid = document.getElementById(\'symptomsGrid\');
+            grid.innerHTML = \'\';
             uniqueSymptoms.forEach(symptom => {
-                const checkbox = document.createElement('div');
-                checkbox.className = 'symptom-checkbox';
+                const checkbox = document.createElement(\'div\');
+                checkbox.className = \'symptom-checkbox\';
                 checkbox.innerHTML = `<input type="checkbox" id="${symptom}" value="${symptom}"><div class="checkbox-custom"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></div><label for="${symptom}">${formatSymptomName(symptom)}</label>`;
                 grid.appendChild(checkbox);
-                checkbox.addEventListener('click', (e) => {
-                    if (e.target.tagName !== 'INPUT') { checkbox.querySelector('input').checked = !checkbox.querySelector('input').checked; }
-                    checkbox.classList.toggle('checked', checkbox.querySelector('input').checked);
+                checkbox.addEventListener(\'click\', (e) => {
+                    if (e.target.tagName !== \'INPUT\') { checkbox.querySelector(\'input\').checked = !checkbox.querySelector(\'input\').checked; }
+                    checkbox.classList.toggle(\'checked\', checkbox.querySelector(\'input\').checked);
                     updateSelectedCount();
                 });
             });
         }
 
-        function formatSymptomName(symptom) { return symptom.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()); }
-        function getSelectedSymptoms() { return Array.from(document.querySelectorAll('#symptomsGrid input:checked')).map(cb => cb.value); }
+        function formatSymptomName(symptom) { return symptom.replace(/_/g, \' \').replace(/\b\w/g, l => l.toUpperCase()); }
+        function getSelectedSymptoms() { return Array.from(document.querySelectorAll(\'#symptomsGrid input:checked\')).map(cb => cb.value); }
         function updateSelectedCount() {
             const count = getSelectedSymptoms().length;
-            document.getElementById('selectedCount').textContent = count === 0 ? 'No symptoms selected' : count + ' symptom' + (count === 1 ? '' : 's') + ' selected';
+            document.getElementById(\'selectedCount\').textContent = count === 0 ? \'No symptoms selected\' : count + \' symptom\' + (count === 1 ? \'\' : \'s\') + \' selected\';
         }
 
         function predictDisease() {
             const selectedSymptoms = getSelectedSymptoms();
-            if (selectedSymptoms.length === 0) { alert('Please select at least one symptom'); return; }
-            document.getElementById('loadingOverlay').classList.add('active');
+            if (selectedSymptoms.length === 0) { alert(\'Please select at least one symptom\'); return; }
+            document.getElementById(\'loadingOverlay\').classList.add(\'active\');
             setTimeout(() => {
                 let bestMatch = null, bestScore = 0;
                 for (const [disease, data] of Object.entries(diseasePredictions)) {
@@ -407,13 +407,13 @@ dashboard_html = """<!DOCTYPE html>
                     if (score > bestScore) { bestScore = score; bestMatch = disease; }
                 }
                 if (!bestMatch || bestScore < 0.1) { bestMatch = "Common Cold"; bestScore = 0.3; }
-                document.getElementById('loadingOverlay').classList.remove('active');
+                document.getElementById(\'loadingOverlay\').classList.remove(\'active\');
                 displayResult(bestMatch, bestScore, selectedSymptoms, diseasePredictions[bestMatch]?.description || "Consult a healthcare professional.");
             }, 1500);
         }
 
         function displayResult(disease, confidence, selectedSymptoms, description) {
-            const container = document.getElementById('resultContainer');
+            const container = document.getElementById(\'resultContainer\');
             const percent = Math.round(confidence * 100);
             container.innerHTML = `<div class="result-content fade-in">
                 <div class="result-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></div>
@@ -427,40 +427,40 @@ dashboard_html = """<!DOCTYPE html>
                 </div>
                 <div class="selected-symptoms-display">
                     <h4>Your Selected Symptoms</h4>
-                    <div class="symptoms-tags">${selectedSymptoms.map(s => `<span class="symptom-tag">${formatSymptomName(s)}</span>`).join('')}</div>
+                    <div class="symptoms-tags">${selectedSymptoms.map(s => `<span class="symptom-tag">${formatSymptomName(s)}</span>`).join(\'\')}</div>
                 </div>
                 <div class="disease-info">
                     <h4><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>About This Condition</h4>
                     <p>${description}</p>
                 </div>
             </div>`;
-            setTimeout(() => { const fill = container.querySelector('.confidence-fill'); if (fill) fill.style.width = percent + '%'; }, 100);
+            setTimeout(() => { const fill = container.querySelector(\'.confidence-fill\'); if (fill) fill.style.width = percent + \'%\'; }, 100);
         }
 
         function clearSelection() {
-            document.querySelectorAll('#symptomsGrid input').forEach(cb => { cb.checked = false; cb.closest('.symptom-checkbox').classList.remove('checked'); });
+            document.querySelectorAll(\'#symptomsGrid input\').forEach(cb => { cb.checked = false; cb.closest(\'.symptom-checkbox\').classList.remove(\'checked\'); });
             updateSelectedCount();
-            document.getElementById('resultContainer').innerHTML = `<div class="empty-state">
+            document.getElementById(\'resultContainer\').innerHTML = `<div class="empty-state">
                 <div class="empty-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg></div>
                 <h3>No Prediction Yet</h3><p>Select symptoms and click "Predict Disease"</p>
             </div>`;
         }
 
-        document.getElementById('symptomSearch').addEventListener('input', function(e) {
+        document.getElementById(\'symptomSearch\').addEventListener(\'input\', function(e) {
             const term = e.target.value.toLowerCase();
-            document.querySelectorAll('.symptom-checkbox').forEach(cb => {
-                cb.style.display = cb.querySelector('label').textContent.toLowerCase().includes(term) ? 'flex' : 'none';
+            document.querySelectorAll(\'.symptom-checkbox\').forEach(cb => {
+                cb.style.display = cb.querySelector(\'label\').textContent.toLowerCase().includes(term) ? \'flex\' : \'none\';
             });
         });
 
         function initializeCharts() {
-            new Chart(document.getElementById('performanceChart'), {
-                type: 'bar',
+            new Chart(document.getElementById(\'performanceChart\'), {
+                type: \'bar\',
                 data: {
-                    labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score'],
+                    labels: [\'Accuracy\', \'Precision\', \'Recall\', \'F1-Score\'],
                     datasets: [{
                         data: [97.62, 98.81, 97.62, 97.62],
-                        backgroundColor: ['rgba(99,102,241,0.8)','rgba(14,165,233,0.8)','rgba(16,185,129,0.8)','rgba(168,85,247,0.8)'],
+                        backgroundColor: [\'rgba(99,102,241,0.8)\',\'rgba(14,165,233,0.8)\',\'rgba(16,185,129,0.8)\',\'rgba(168,85,247,0.8)\'],
                         borderRadius: 8
                     }]
                 },
@@ -469,31 +469,31 @@ dashboard_html = """<!DOCTYPE html>
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        y: { beginAtZero: true, max: 100, grid: { color: 'rgba(148,163,184,0.1)' }, ticks: { color: '#94a3b8' } },
-                        x: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+                        y: { beginAtZero: true, max: 100, grid: { color: \'rgba(148,163,184,0.1)\' }, ticks: { color: \'#94a3b8\' } },
+                        x: { grid: { display: false }, ticks: { color: \'#94a3b8\' } }
                     }
                 }
             });
-            new Chart(document.getElementById('diseaseChart'), {
-                type: 'doughnut',
+            new Chart(document.getElementById(\'diseaseChart\'), {
+                type: \'doughnut\',
                 data: {
-                    labels: ['Infectious','Respiratory','Gastrointestinal','Neurological','Other'],
+                    labels: [\'Infectious\',\'Respiratory\',\'Gastrointestinal\',\'Neurological\',\'Other\'],
                     datasets: [{
                         data: [25, 20, 18, 15, 22],
-                        backgroundColor: ['rgba(239,68,68,0.8)','rgba(14,165,233,0.8)','rgba(16,185,129,0.8)','rgba(168,85,247,0.8)','rgba(99,102,241,0.8)'],
+                        backgroundColor: [\'rgba(239,68,68,0.8)\',\'rgba(14,165,233,0.8)\',\'rgba(16,185,129,0.8)\',\'rgba(168,85,247,0.8)\',\'rgba(99,102,241,0.8)\'],
                         borderWidth: 0
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    cutout: '65%',
-                    plugins: { legend: { position: 'right', labels: { color: '#94a3b8', padding: 12, usePointStyle: true } } }
+                    cutout: \'65%\',
+                    plugins: { legend: { position: \'right\', labels: { color: \'#94a3b8\', padding: 12, usePointStyle: true } } }
                 }
             });
         }
 
-        window.addEventListener('DOMContentLoaded', () => { initializeSymptoms(); initializeCharts(); });
+        window.addEventListener(\'DOMContentLoaded\', () => { initializeSymptoms(); initializeCharts(); });
     </script>
 </body>
 </html>"""
